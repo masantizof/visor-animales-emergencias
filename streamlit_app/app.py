@@ -87,12 +87,12 @@ h1, h2, h3 { letter-spacing: -0.01em; }
        box-shadow: 0 1px 2px rgba(16,24,44,.05), 0 6px 18px -12px rgba(16,24,44,.18); position: relative; overflow: hidden; }
 .kpi::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--kc, #1f3460); }
 .kpi-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; }
-.kpi-value { font-size: 27px; font-weight: 800; line-height: 1; color: #10182c; font-variant-numeric: tabular-nums; }
-.kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; color: #4b5468; margin-top: 3px; }
+.kpi-value { font-size: 34px; font-weight: 800; line-height: 1; color: #10182c; font-variant-numeric: tabular-nums; }
+.kpi-label { font-size: 13.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; color: #4b5468; margin-top: 5px; }
 .kpi img { width: 36px; height: 36px; object-fit: contain; }
-.kpi-sub { font-size: 10.5px; color: #838a9c; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(16,24,44,.10); }
+.kpi-sub { font-size: 12px; color: #838a9c; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(16,24,44,.10); }
 .kpi-wide { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; padding: 14px 18px; }
-.kpi-wide .kpi-value { font-size: 32px; }
+.kpi-wide .kpi-value { font-size: 40px; }
 
 .section-title { font-size: 16px; font-weight: 800; color: #10182c; margin: 1.6rem 0 .5rem; }
 .section-hint { font-size: 12px; color: #838a9c; font-weight: 500; }
