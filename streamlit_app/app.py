@@ -335,6 +335,24 @@ if st.session_state.sel_dept or st.session_state.sel_muni:
 # ---------------------------------------------------------------------------
 # 13 tarjetas principales (categoría × estado + alojamiento temporal)
 # ---------------------------------------------------------------------------
+
+# Total de animales rescatados (suma transversal de las 3 categorías) — primera fila
+res_total = int(sum(SCOPE[f"{k}Res"].sum() for k in D.CATEGORIES))
+res_prod = int(SCOPE["prodRes"].sum())
+res_comp = int(SCOPE["compRes"].sum())
+res_silv = int(SCOPE["silvRes"].sum())
+st.markdown(f"""
+<div class="kpi-row">
+  <div class="kpi kpi-wide" style="--kc:{STATUS_COLORS['Rescatados']}">
+    <div>
+      <div class="kpi-value">{fmt(res_total)}</div>
+      <div class="kpi-label">Total animales rescatados</div>
+    </div>
+    <div class="kpi-sub" style="margin:0;border:none;padding:0;">Producción {fmt(res_prod)} · Compañía {fmt(res_comp)} · Silvestres {fmt(res_silv)} — actualizado en cada corte</div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
 def kpi_card(col: str, label: str, icon: str, accent: str) -> str:
     val = fmt(SCOPE[col].sum())
     n_munis = int((SCOPE[col] > 0).sum())
@@ -403,23 +421,6 @@ st.markdown(f"""
       <div class="kpi-label">En alojamiento temporal</div>
     </div>
     <div class="kpi-sub" style="margin:0;border:none;padding:0;">Indicador transversal — reportado en {n_muni_aloj} municipio{'s' if n_muni_aloj != 1 else ''} · la fuente no lo desagrega por categoría</div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Total de animales rescatados (suma transversal de las 3 categorías)
-res_total = int(sum(SCOPE[f"{k}Res"].sum() for k in D.CATEGORIES))
-res_prod = int(SCOPE["prodRes"].sum())
-res_comp = int(SCOPE["compRes"].sum())
-res_silv = int(SCOPE["silvRes"].sum())
-st.markdown(f"""
-<div class="kpi-row">
-  <div class="kpi kpi-wide" style="--kc:{STATUS_COLORS['Rescatados']}">
-    <div>
-      <div class="kpi-value">{fmt(res_total)}</div>
-      <div class="kpi-label">Total animales rescatados</div>
-    </div>
-    <div class="kpi-sub" style="margin:0;border:none;padding:0;">Producción {fmt(res_prod)} · Compañía {fmt(res_comp)} · Silvestres {fmt(res_silv)} — actualizado en cada corte</div>
   </div>
 </div>
 """, unsafe_allow_html=True)
