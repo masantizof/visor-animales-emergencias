@@ -22,6 +22,8 @@ y actualiza la fecha de corte mostrada.
 ## Qué muestra
 
 - **13 tarjetas principales**: producción, compañía y silvestres ×
+- **Total animales rescatados**: suma transversal de las 3 categorías,
+  recalculada en cada corte.
   (desaparecidos / lesionados / muertos / rescatados) + alojamiento temporal.
 - **Mapa de afectación** (Folium, basemap CartoDB Voyager): clic en un
   departamento entra a sus municipios; clic en un municipio filtra todo el

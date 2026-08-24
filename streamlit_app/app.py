@@ -407,6 +407,23 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
+# Total de animales rescatados (suma transversal de las 3 categorías)
+res_total = int(sum(SCOPE[f"{k}Res"].sum() for k in D.CATEGORIES))
+res_prod = int(SCOPE["prodRes"].sum())
+res_comp = int(SCOPE["compRes"].sum())
+res_silv = int(SCOPE["silvRes"].sum())
+st.markdown(f"""
+<div class="kpi-row">
+  <div class="kpi kpi-wide" style="--kc:{STATUS_COLORS['Rescatados']}">
+    <div>
+      <div class="kpi-value">{fmt(res_total)}</div>
+      <div class="kpi-label">Total animales rescatados</div>
+    </div>
+    <div class="kpi-sub" style="margin:0;border:none;padding:0;">Producción {fmt(res_prod)} · Compañía {fmt(res_comp)} · Silvestres {fmt(res_silv)} — actualizado en cada corte</div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
 # ---------------------------------------------------------------------------
 # Mapa de afectación (Folium) + ranking
 # ---------------------------------------------------------------------------
